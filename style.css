@@ -1,6 +1,12 @@
 :root {
   font-size: 15px;
   --bg-color: #000;
+  --padding-pg: 60px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 .time-slice {
@@ -60,13 +66,31 @@ h1 {
   display: flex;
   height: auto;
   font-family: "Teko", sans-serif;
-  padding: 30px 3rem;
+  padding: 30px;
   background-color: var(--bg-color);
   justify-content: flex-end;
-  border-bottom: 1px solid #280101;
+  border-bottom: 1px solid #3d0303;
   align-items: center;
   position: sticky;
+  z-index: 999;
   top: 0;
+}
+
+.navbar a:hover {
+  color: #b6292b;
+}
+
+.navbar a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid #b6292b;
+  transform: scaleX(0);
+  transition: 0.2 linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
 }
 
 ul {
@@ -93,11 +117,17 @@ li a {
 }
 
 @media (max-width: 600px) {
+  .container {
+    height: calc(100vh - 70px);
+  }
+
   .navbar {
     background-color: var(--bg-color);
     overflow: hidden;
     justify-content: flex-start;
     position: sticky;
+    top: 0;
+    right: 0;
     z-index: 999;
   }
 
@@ -111,6 +141,7 @@ li a {
     font-size: 17px;
     display: block;
     width: max-content;
+    position: relative;
   }
 
   .navbar a.icon {
@@ -135,6 +166,11 @@ li a {
 }
 
 /* Jumbotron */
+.container {
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-duration: 5s;
+}
+
 .jumbotron-wrapper {
   background-image: linear-gradient(180deg, rgba(31, 30, 30, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%), url(img/3.jpeg);
   background-size: cover;
@@ -158,7 +194,7 @@ li a {
 .page-title {
   font-family: "Resident Evil 4 Remake Font";
   font-weight: normal;
-  font-size: 150px;
+  font-size: 10rem;
   letter-spacing: 3px;
   font-style: normal;
   width: 500px;
@@ -259,10 +295,8 @@ a:hover {
 }
 
 .ct-wrapper {
-  height: 700px;
-  width: auto;
-  padding-top: 40px;
-  margin-bottom: 40px;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 5s;
 }
 
 .ct-title {
@@ -289,8 +323,6 @@ a:hover {
   .ct-wrapper {
     height: 650px;
     width: auto;
-    padding-top: 40px;
-    margin-bottom: 40px;
   }
 
   .ct-title {
@@ -382,7 +414,9 @@ div.swiper-button-prev {
 .first-container {
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%), url(img/img2.png);
   justify-content: center;
-  padding: 60px;
+  padding: var(--padding-pg);
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 5s;
 }
 
 .title-block {
@@ -400,10 +434,14 @@ div.swiper-button-prev {
   font-size: 18px;
   font-weight: 300;
   text-align: left;
-  margin: 20px auto;
+  margin: auto;
 }
 
 @media screen and (max-width: 400px) {
+  .container {
+    height: calc(100vh - 70px);
+  }
+
   .jumbotron-wrapper {
     background-image: linear-gradient(180deg, rgba(31, 30, 30, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%), url(img/3.jpeg);
     background-size: cover;
@@ -441,7 +479,7 @@ div.swiper-button-prev {
     background-repeat: no-repeat;
     background-position: center center;
     justify-content: center;
-    padding: 20px;
+    width: auto;
   }
 
   .title-block,
@@ -452,11 +490,11 @@ div.swiper-button-prev {
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 300;
-    margin: 0;
+    margin-bottom: 20px;
   }
 
   .desc-text {
-    width: 66%;
+    width: auto;
     font-size: 1rem;
     font-weight: 300;
     text-align: left;
@@ -476,6 +514,10 @@ div.swiper-button-prev {
     height: 545px;
     position: relative;
     z-index: -1;
+  }
+
+  .container-1 {
+    width: 100% !important;
   }
 
   .step-content {
@@ -581,10 +623,11 @@ div.swiper-button-prev {
 
 /* Block Content */
 .block-content {
-  padding: 40px;
   background-color: var(--bg-color);
   font-weight: 500;
   font-size: 30px;
+  transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-duration: 3s;
 }
 
 .container-1 {
@@ -597,7 +640,6 @@ div.swiper-button-prev {
 .card {
   width: 650px;
   height: 545px;
-  padding-top: 48px;
   position: relative;
 }
 
@@ -639,6 +681,7 @@ div.swiper-button-prev {
   text-align: center;
   margin-top: 10px;
 }
+
 @media screen and (max-width: 680px) {
   .card {
     width: 300px;
@@ -669,7 +712,7 @@ div.swiper-button-prev {
     font-weight: 300;
     font-size: 30px;
     letter-spacing: 4px;
-    color: #fff;
+    color: #b6292b;
     margin-bottom: 0.75rem;
     text-align: center;
     margin-top: 20px;
@@ -692,26 +735,31 @@ div.swiper-button-prev {
 
 .second-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background-image: linear-gradient(180deg, rgba(31, 30, 30, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%), url(img/2.jpeg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  margin-bottom: 40px;
-  margin-top: 40px;
-  padding-top: 40px;
+  padding: var(--padding-pg);
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 3s;
 }
 
 .second-content {
   display: flex;
   flex-wrap: wrap;
   position: relative;
+  justify-content: space-evenly;
   width: 80%;
 }
 
-.container-2,
+.container-2 {
+  margin-bottom: 20px;
+  width: 45%;
+}
+
 .container-3 {
-  width: 50%;
+  width: 45%;
 }
 
 @media screen and (max-width: 600px) {
@@ -722,6 +770,11 @@ div.swiper-button-prev {
 
   .second-content {
     display: block;
+    width: auto;
+  }
+
+  .grid-wrapper {
+    width: 85%;
   }
 }
 
@@ -754,20 +807,27 @@ h2 {
   font-weight: 300;
   font-style: normal;
   line-height: 1.33;
-  font-size: 2.188rem;
+  font-size: 1.5rem;
 }
 
 /* CP */
-.contact-person,
 .block-content {
-  padding: 30px;
+  padding: var(--padding-pg);
   background-color: var(--bg-color);
   color: white;
 }
 
+.contact-person {
+  padding: var(--padding-pg);
+  background-color: var(--bg-color);
+  color: white;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 3s;
+}
+
 .container-4 {
   margin: auto;
-  width: 87%;
+  width: 92%;
 }
 
 .wrapper {
@@ -804,22 +864,51 @@ h2 {
   font-size: 1.4rem;
   line-height: 1.33;
 }
+
 @media screen and (max-width: 400px) {
-  .footer-wrapper {
-    width: 95% !important;
+  .contact-person {
+    padding: 20px;
+    display: block;
   }
 
   .cc-contact-footer-h2 {
-    font-size: 28px;
-    font-weight: 800;
-    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
   }
 
   .cc-contact-footer {
     font-weight: 300;
     font-size: 1rem;
     line-height: 1.33;
+    margin-bottom: 10px;
   }
+
+  .footer-wrapper {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .footer-title {
+    margin-bottom: 10px;
+  }
+
+  .footer-text {
+    font-size: 18px;
+    font-weight: 300;
+    text-align: left;
+    margin: 0;
+  }
+
+  .rich-text a {
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .footer-text {
+    width: 50%;
+  }
+
   .cc-footer-link {
     font-size: 15px;
   }
@@ -833,12 +922,15 @@ footer {
 .footer-wrapper {
   display: flex;
   flex-wrap: wrap;
-  padding: 60px;
+  padding: var(--padding-pg);
   justify-content: space-between;
-  background-color: var(--bg-color);
   color: #fff;
   margin: auto;
   width: 90%;
+}
+
+.footer-title {
+  margin-bottom: 10px;
 }
 
 .footer-text {
@@ -851,9 +943,12 @@ footer {
 .cc-footer-link {
   font-weight: 400;
   font-style: normal;
-  font-size: 22px;
-  padding-top: 3px;
-  padding-bottom: 4px;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.cc-footer-link a:hover {
+  color: #b6292b;
 }
 
 .rich-text a {
@@ -874,29 +969,28 @@ footer {
   font-weight: 600;
   font-style: normal;
   font-size: 12px;
-  letter-spacing: 1.75px;
   text-transform: uppercase;
   color: #858585;
-  margin-bottom: 13px;
 }
 
 .footer-link-wrapper a {
   display: block;
   text-decoration: none;
-  margin-top: 10px;
-  margin-bottom: 10px;
   color: #fff;
 }
 
 .footer-link-wrapper {
   width: auto;
+  margin-bottom: 20px;
 }
 .footer-link-wrapper-1 {
   width: 33.3%;
-  display: block;
+  margin-bottom: 20px;
 }
-.footer-link-wrappe-2 {
+.footer-link-wrapper-2 {
   width: 33.3%;
+  display: block;
+  margin-bottom: 20px;
 }
 
 .rich-text {
