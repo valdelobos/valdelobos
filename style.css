@@ -447,7 +447,7 @@ div.swiper-button-prev {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    height: 375px;
+    height: 565px;
     position: relative;
   }
 
@@ -886,7 +886,7 @@ h2 {
 
   .footer-wrapper {
     display: block !important;
-    width: 100% !important;
+    width: 82% !important;
   }
 
   .footer-title {
@@ -922,11 +922,11 @@ footer {
 .footer-wrapper {
   display: flex;
   flex-wrap: wrap;
-  padding: var(--padding-pg);
+  padding: 20px;
   justify-content: space-between;
   color: #fff;
   margin: auto;
-  width: 90%;
+  width: 85%;
 }
 
 .footer-title {
