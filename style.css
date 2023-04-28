@@ -80,14 +80,6 @@ h1 {
   color: #b6292b;
 }
 
-.navbar a::after {
-  content: "";
-  display: block;
-  padding-bottom: 0.5rem;
-  border-bottom: 0.1rem solid #b6292b;
-  transform: scaleX(0);
-  transition: 0.2 linear;
-}
 
 .navbar .navbar-nav a:hover::after {
   transform: scaleX(0.5);
