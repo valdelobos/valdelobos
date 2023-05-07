@@ -792,6 +792,14 @@ p.step-index {
     margin-bottom: 10px;
   }
 
+  .cc-footer-link {
+    font-size: 1rem !important;
+  }
+
+  .rich-text p {
+    margin: 0;
+  }
+
   .wrapper {
     display: block;
     width: 100%;
@@ -804,6 +812,10 @@ p.step-index {
   .footer-wrapper {
     display: block;
     width: 82%;
+  }
+
+  .footer-icon {
+    margin-left: 5px;
   }
 }
 
@@ -840,6 +852,10 @@ p.step-index {
     font-size: 1rem;
     line-height: 1.33;
     margin-bottom: 10px;
+  }
+
+  .cc-footer-link {
+    font-size: 1rem !important;
   }
 
   .footer-wrapper {
