@@ -1,106 +1,7 @@
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  display: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 10px;
-  width: 10px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active,
-.dot:hover {
-  background-color: #b6292b;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev,
-  .next,
-  .text {
-    font-size: 10px;
-  }
-}
-/* Carousel */
-
 :root {
   font-size: 15px;
   --bg-color: #000;
-  --padding-pg: 60px;
+  --padding-pg: 40px;
 }
 
 * {
@@ -108,13 +9,11 @@
   padding: 0;
 }
 
-.mySlides {
-  display: none;
-}
-
-img {
-  vertical-align: middle;
-}
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
+} */
 
 .time-slice {
   display: -webkit-box;
@@ -179,7 +78,7 @@ h1 {
   border-bottom: 1px solid #3d0303;
   align-items: center;
   position: sticky;
-  z-index: 999;
+  z-index: 1000;
   top: 0;
 }
 
@@ -215,10 +114,6 @@ li a {
 }
 
 @media (max-width: 600px) {
-  .container {
-    height: calc(100vh - 70px);
-  }
-
   .navbar {
     background-color: var(--bg-color);
     overflow: hidden;
@@ -226,7 +121,7 @@ li a {
     position: sticky;
     top: 0;
     right: 0;
-    z-index: 999;
+    z-index: 1000;
   }
 
   .navbar #links {
@@ -262,13 +157,9 @@ li a {
     z-index: 1000;
   }
 }
+/* End of Navbar */
 
 /* Jumbotron */
-.container {
-  transition: cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition-duration: 5s;
-}
-
 .jumbotron-wrapper {
   background-image: linear-gradient(180deg, rgba(31, 30, 30, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%), url(img/3.jpeg);
   background-size: cover;
@@ -331,7 +222,7 @@ p.lead-1 {
     background-position: center center;
     background-repeat: no-repeat;
     color: white;
-    height: 350px;
+    height: 100vh;
     position: relative;
   }
 
@@ -346,195 +237,187 @@ p.lead-1 {
   }
 
   .page-title {
-    font-family: "Resident Evil 4 Remake Font";
-    font-weight: normal;
-    font-size: 3.125rem;
-    letter-spacing: 3px;
-    font-style: normal;
-    width: 200px;
-    margin-bottom: 15px;
+    font-size: 5rem;
   }
 
-  p.lead {
-    font-size: 20px;
-    margin: 0 0 15px 0;
+  p.lead-1 {
+    font-size: 1.5rem;
   }
 
   .button-1 {
-    background-color: #b6292b;
-    border: none;
-    color: #fff;
     padding: 10px 27px;
-    text-align: center;
-    display: inline-block;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 1rem;
     margin: 4px 2px;
-    cursor: pointer;
-    letter-spacing: 1.75px;
-    transition-duration: 0.4s;
-  }
-
-  .button-1:hover {
-    background-color: #000;
-    color: white;
   }
 }
+/* End of Jumbotron */
 
-/* Swiper */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-a:hover {
-  cursor: pointer;
-}
-
+/* Our Team */
 .ct-wrapper {
-  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition-duration: 5s;
   padding: 40px;
 }
 
-.ct-title {
+.ct-title,
+.title-block {
   font-family: "Resident Evil 4 Remake Font";
   text-align: center;
-  font-size: 100px;
+  font-size: 5rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 300;
-  margin: 0;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 600px) {
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
-  a:hover {
-    cursor: pointer;
-  }
-
   .ct-wrapper {
-    height: 650px;
-    width: auto;
+    padding: 40px;
   }
 
-  .ct-title {
-    font-family: "Resident Evil 4 Remake Font";
-    text-align: center;
-    font-size: 40px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 300;
-    margin: 0;
-  }
-}
-
-/* Swiper container stylng */
-.swiper {
-  width: 855px;
-  height: 80%;
-}
-
-@media screen and (max-width: 600px) {
-  .swiper {
-    width: 400px;
-    height: 80%;
-  }
-  .swiper-slide {
-    text-align: center;
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    height: 50% !important;
+  .ct-title,
+  .title-block {
+    font-size: 4rem;
+    letter-spacing: 3px;
   }
 
-  .swiper-slide img {
+  img {
+    margin-top: 20px;
+    width: 100% !important;
+    height: auto !important;
+    margin: auto;
     display: block;
-    width: 30%;
-    height: 80%;
-    object-fit: cover;
+  }
+
+  .desc-text {
+    width: 85% !important;
+    margin: auto;
+  }
+
+  h2.lead {
+    font-size: 1.2rem !important;
+    font-weight: 300;
+    text-align: justify;
   }
 }
 
-.swiper-slide {
-  text-align: center;
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  height: 88% !important;
+/* Carousel */
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
 }
 
-.swiper-slide img {
-  display: block;
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  display: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  text-align: center;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-  outline: none;
-  color: #c8191980 !important;
+.mySlides {
+  display: none;
 }
 
-div.swiper-button-next,
-div.swiper-button-prev {
-  top: 70%;
+/* Img */
+img {
+  width: 60%;
+  height: 350px;
+  margin: auto;
+  display: block;
 }
 
-/* Swiper */
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #b6292b;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 10px;
+  }
+}
+/* End of Carousel */
 
 /* Main Content */
 .first-container {
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%), url(img/img2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   justify-content: center;
   padding: var(--padding-pg);
-  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition-duration: 5s;
-}
-
-.title-block {
-  font-family: "Resident Evil 4 Remake Font";
-  text-align: center;
-  font-size: 100px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 300;
-  margin: 0;
 }
 
 .desc-text {
-  width: 78%;
-  font-size: 18px;
+  width: 76%;
+  margin: auto;
+  font-size: 1.2rem;
   font-weight: 300;
   text-align: left;
-  margin: auto;
 }
 
 @media screen and (max-width: 400px) {
@@ -548,7 +431,10 @@ div.swiper-button-prev {
     background-position: center center;
     background-repeat: no-repeat;
     height: 565px;
-    position: relative;
+  }
+
+  .page-title {
+    font-size: 4rem;
   }
 
   .button-1 {
@@ -566,11 +452,6 @@ div.swiper-button-prev {
 
   p.lead-1 {
     font-size: 12px;
-  }
-
-  .ct-wrapper {
-    height: auto;
-    width: auto;
   }
 
   .first-container {
@@ -593,6 +474,13 @@ div.swiper-button-prev {
     margin-bottom: 20px;
   }
 
+  img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    display: block;
+  }
+
   .desc-text {
     width: auto;
     font-size: 1rem;
@@ -600,21 +488,17 @@ div.swiper-button-prev {
     text-align: left;
   }
 
-  h2 {
-    font-weight: 300;
-    font-style: normal;
-    line-height: 1.33;
-    font-size: 14px;
-    text-align: left;
+  .card-text {
+    font-size: 1rem !important;
+    width: 90% !important;
   }
 
-  .card {
-    background: #000;
-    position: relative;
+  h2.lead {
+    font-size: 1.1rem !important;
   }
 
   .container-1 {
-    width: 100% !important;
+    width: 70% !important;
   }
 
   .step-content {
@@ -713,31 +597,29 @@ div.swiper-button-prev {
   .image-row .image {
     flex-basis: auto;
   }
-  .lead {
-    font-size: 1rem;
-  }
 }
+/* End of Gallery */
 
 /* Block Content */
 .block-content {
   background-color: var(--bg-color);
   font-weight: 500;
-  font-size: 30px;
-  transition: cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition-duration: 3s;
+  font-size: 2rem;
+  margin: 20px 0 40px 0;
 }
 
 .container-1 {
   margin: auto;
-  width: 75%;
-  text-align: center;
+  width: 73%;
+}
+
+h2.lead {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-align: justify;
 }
 
 /* Cards Block */
-.card {
-  position: relative;
-}
-
 .card-image {
   background-color: var(--bg-color);
   height: 300px;
@@ -762,7 +644,7 @@ div.swiper-button-prev {
   font-weight: 300;
   font-size: 3.125rem;
   letter-spacing: 4px;
-  color: #fff;
+  color: #b6292b;
   margin-bottom: 0.75rem;
   text-align: center;
   margin-top: 20px;
@@ -771,23 +653,13 @@ div.swiper-button-prev {
 .card-text {
   width: 80%;
   margin: auto;
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: 300;
   text-align: center;
   margin-top: 10px;
 }
 
 @media screen and (max-width: 680px) {
-  .card {
-    position: relative;
-  }
-
-  .card-image {
-    height: 200px;
-    margin-bottom: 15px;
-    background-size: cover;
-  }
-
   .card-1 {
     background-image: url(img/leon.jpeg);
   }
@@ -801,28 +673,12 @@ div.swiper-button-prev {
   }
 
   .card-title {
-    font-family: "Resident Evil 4 Remake Font";
-    font-weight: 300;
-    font-size: 30px;
-    letter-spacing: 4px;
     color: #b6292b;
-    margin-bottom: 0.75rem;
-    text-align: center;
-    margin-top: 20px;
+    font-size: 3rem;
   }
 
   .card-text {
-    width: 80%;
-    margin: auto;
-    font-size: 14px;
-    font-weight: 300;
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  div.swiper-button-next,
-  div.swiper-button-prev {
-    top: 60%;
+    font-size: 1.2rem;
   }
 }
 
@@ -834,20 +690,17 @@ div.swiper-button-prev {
   background-position: center center;
   background-repeat: no-repeat;
   padding: var(--padding-pg);
-  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition-duration: 3s;
 }
 
 .second-content {
   display: flex;
   flex-wrap: wrap;
-  position: relative;
   justify-content: space-evenly;
   width: 80%;
 }
 
 .container-2 {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   width: 45%;
 }
 
@@ -856,14 +709,24 @@ div.swiper-button-prev {
 }
 
 @media screen and (max-width: 600px) {
+  .second-container {
+    display: block;
+  }
+
   .container-2,
   .container-3 {
-    width: 95%;
+    width: 100%;
   }
 
   .second-content {
     display: block;
     width: auto;
+  }
+
+  .step-list-wrapper,
+  .step-list-wrapper-1 {
+    width: 85%;
+    margin: auto;
   }
 
   .grid-wrapper {
@@ -896,38 +759,19 @@ p.step-index {
   font-size: 1.2rem;
 }
 
-h2 {
-  font-weight: 300;
-  font-style: normal;
-  line-height: 1.33;
-  font-size: 1.5rem;
-}
-
 /* CP */
-.block-content {
-  padding: var(--padding-pg);
-  background-color: var(--bg-color);
-  color: white;
-}
-
 .contact-person {
   padding: var(--padding-pg);
   background-color: var(--bg-color);
   color: white;
-  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition-duration: 3s;
-}
-
-.container-4 {
-  margin: auto;
-  width: 92%;
 }
 
 .wrapper {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  padding: 20px;
 }
 
 .info-wrapper {
@@ -937,8 +781,32 @@ h2 {
 }
 
 @media screen and (max-width: 600px) {
+  .contact-person {
+    display: block;
+  }
+
+  .container-4 {
+    width: 95%;
+    margin: 0;
+  }
+
+  .cc-contact-footer-h2,
+  .cc-contact-footer {
+    margin-bottom: 10px;
+  }
+
+  .wrapper {
+    justify-content: inherit;
+    width: 100%;
+  }
+
   .info-wrapper {
     width: 100%;
+  }
+
+  .footer-wrapper {
+    display: block;
+    width: 82%;
   }
 }
 
@@ -982,6 +850,10 @@ h2 {
     width: 82% !important;
   }
 
+  .wrapper {
+    justify-content: inherit;
+  }
+
   .footer-title {
     margin-bottom: 10px;
   }
@@ -1016,10 +888,9 @@ footer {
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
-  justify-content: space-between;
+  justify-content: space-evenly;
   color: #fff;
   margin: auto;
-  width: 85%;
 }
 
 .footer-title {
@@ -1050,12 +921,6 @@ footer {
 
 .footer-text {
   width: 50%;
-}
-
-@media screen and (max-width: 400px) {
-  .cc-footer-link {
-    font-size: 15px;
-  }
 }
 
 .footer-title {
