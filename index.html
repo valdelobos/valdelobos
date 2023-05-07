@@ -41,7 +41,7 @@
     <!-- End Navbar -->
 
     <!-- Jumbotron -->
-    <div class="container">
+    <section class="container">
       <section class="jumbotron-wrapper">
         <div class="jumbotron">
           <h1 class="page-title"><span style="color:#b6292b">V</span>ALDE<span style="color:#b6292b">L</span>OBOS</h1>
@@ -49,43 +49,55 @@
           <a href="https://twitter.com/vaidelobos" class="button-1">ENROLL</a>
         </div>
       </section>
-    </div>
-   
+    </section>
     <!-- End Jumbotron -->
 
-    <!-- Swiper -->
+    <!-- Carousel -->
     <section class="ct-wrapper" id="emissaries">
         <h2 class="ct-title"><span style="color:#b6292b">E</span>MISSARIES</h2>
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide slide_1">
-                <div class="card">
-                    <div class="card-image card-1"></div>
-                    <h5 class="card-title">Leon S. Kennedy</h5>
-                    <p class="card-text">Traumatized after surviving the Raccoon City incident, Leon found himself recruited to the Division of Security Operations (DSO) and was assigned into Operation Baby Eagle to save Ashley Graham from Los Illuminados.
-                    </p>
-                  </div>
-              </div>
-              <div class="swiper-slide slide_2">
-                <div class="card">
-                    <div class="card-image card-2"></div>
-                    <h5 class="card-title">Ada Wong</h5>
-                    <p class="card-text">She doesn’t work and tell who she’s working for, but all you have to know is that she’s a merchant through and through. Her role in this mess is a mysterious one, but you'll soon discover that she was tasked to retrieve the "Amber".</p>
-                  </div>
-              </div>
-              <div class="swiper-slide slide_3">
-                <div class="card">
-                    <div class="card-image card-3"></div>
-                    <h5 class="card-title">Luis Serra Navarro</h5>
-                    <p class="card-text">He said helping Operation Baby Eagle "makes him feel better", but there's more to it than what the ear hears. He used to be a researcher for Umbrella, worked with Los Illuminados, and now secretly in a league with Ada too. Yet, all he actually wanted was to get out of Valdelobos.</p>
-                  </div>
-              </div>
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+        <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="img/leon.jpg" style="width:100%">
+        <div class="card">      
+          <h5 class="card-title">Leon S. Kennedy</h5>
+          <p class="card-text">Traumatized after surviving the Raccoon City incident, Leon found himself recruited to the Division of Security Operations (DSO) and was assigned into Operation Baby Eagle to save Ashley Graham from Los Illuminados.
+          </p>
         </div>
-    </section>
-    <!-- End of Swiper -->
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="img/ada.jpg" style="width:100%">
+        <div class="card">
+          <h5 class="card-title">Ada Wong</h5>
+          <p class="card-text">She doesn’t work and tell who she’s working for, but all you have to know is that she’s a merchant through and through. Her role in this mess is a mysterious one, but you'll soon discover that she was tasked to retrieve the "Amber".</p>
+        </div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="img/luis.jpg" style="width:100%">
+        <div class="card">
+          <h5 class="card-title">Luis Serra Navarro</h5>
+          <p class="card-text">He said helping Operation Baby Eagle "makes him feel better", but there's more to it than what the ear hears. He used to be a researcher for Umbrella, worked with Los Illuminados, and now secretly in a league with Ada too. Yet, all he actually wanted was to get out of Valdelobos.</p>
+        </div>
+      </div>
+      
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+      
+      </div>
+      <br>
+      
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+      </div>
+    </section> 
+    <!-- End of Carousel -->
 
     <!-- Main Content -->
     <main class="main-content">
@@ -253,27 +265,48 @@
       </div>
     </footer>
     <!-- End of Footer -->
-    
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script>
-        let swiper = new Swiper(".mySwiper", {
-   navigation: {
-     nextEl: ".swiper-button-next",
-     prevEl: ".swiper-button-prev",
-   },
- });
 
-//  Tambah Ini 
-  function myFunction() {
-    var x = document.getElementById("links");
-    if (x.style.display === "block") {
-      if (screen.width <= 600) {
-        x.style.display = "none";
+    //  Tambah Ini 
+    <script>
+    function myFunction() {
+        var x = document.getElementById("links");
+        if (x.style.display === "block") {
+          if (screen.width <= 600) {
+            x.style.display = "none";
+          }
+        } else {
+          x.style.display = "block";
+        }
       }
-    } else {
-      x.style.display = "block";
-    }
-  }
+    </script>
+  
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
     </script>
   </body>
 </html>
