@@ -5,15 +5,15 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
+  scroll-behavior: smooth;
+  text-decoration: none;
 }
 
-/* *,
+*,
 *::before,
 *::after {
   box-sizing: border-box;
-} */
+}
 
 .time-slice {
   display: -webkit-box;
@@ -23,18 +23,6 @@
 .date.time {
   -webkit-flex-shrink: 0;
   -webkit-flex-basis: 100px;
-}
-
-html {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  text-decoration: none;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
 }
 
 body {
@@ -186,7 +174,7 @@ li a {
   font-size: 10rem;
   letter-spacing: 3px;
   font-style: normal;
-  width: 500px;
+  width: fit-content;
 }
 
 p.lead-1 {
@@ -421,8 +409,12 @@ img {
 }
 
 @media screen and (max-width: 400px) {
+  html {
+    box-sizing: border-box;
+  }
+
   .container {
-    height: calc(100vh - 70px);
+    height: 100vh;
   }
 
   .jumbotron-wrapper {
@@ -499,6 +491,11 @@ img {
 
   .container-1 {
     width: 70% !important;
+  }
+
+  .step-list-wrapper,
+  .step-list-wrapper-1 {
+    width: 100% !important;
   }
 
   .step-content {
@@ -796,7 +793,7 @@ p.step-index {
   }
 
   .wrapper {
-    justify-content: inherit;
+    display: block;
     width: 100%;
   }
 
@@ -828,7 +825,7 @@ p.step-index {
 
 @media screen and (max-width: 400px) {
   .contact-person {
-    padding: 20px;
+    padding: 16px;
     display: block;
   }
 
@@ -851,7 +848,7 @@ p.step-index {
   }
 
   .wrapper {
-    justify-content: inherit;
+    display: block;
   }
 
   .footer-title {
